@@ -1,12 +1,28 @@
 @-moz-document domain("hooktube.com") {
 
   :root {
-    --bg-color: #222;
+    --bg-color: #111111;
     --highlight: #a4a4a4;
+    --navbar-bg-color: #232323;
+    --link-color: #D8D8D8;
+    --link-hover-color: #D8D8D8;
+    --channel-title-link-color: rgba(255, 255, 255, 0.74);
+    --channel-title-link-color-hover: rgba(255, 255, 255, 1);
+    --primary-color: rgba(255, 255, 255, 0.88);
+  }
+
+  #video-list > .row > * > a {
+    font-weight: bold;
+    font-family: Roboto, Arial, sans-serif;
   }
 
   .navbar {
-    background-color:var(--bg-color);
+    background-color:var(--navbar-bg-color);
+    border-bottom: 1px solid #222;
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.9)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 9h22M4 15h22M4 21h22'/%3E%3C/svg%3E") !important;
   }
 
   .jumbotron {
@@ -37,6 +53,11 @@
     color:var(--highlight);
   }
 
+  .card {
+    background-color: transparent !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
   .card-title {
     color:var(--highlight);
   }
@@ -48,10 +69,30 @@
   .card-body {
     background-color:var(--bg-color);
     color:var(--highlight);
+
+  }
+
+  /* tag list */
+  .badge {
+    background-color: var(--link-color);
+    color: var(--bg-color);
+  }
+
+  /* search box */
+  #search-input {
+    border: 1px solid #333 !important;
+  }
+
+  #search-input:focus {
+    border-color: #80bdff;
   }
 
   .list-channel-title {
-    color:var(--highlight);
+    color: var(--channel-title-link-color);
+  }
+
+  .list-channel-title:hover {
+    color: var(--channel-title-link-color-hover);
   }
 
   .btn {
@@ -127,12 +168,12 @@
   }
 
   a:hover {
-    color: #ef9a9a;
+    color: var(--link-hover-color);
     text-decoration: none;
   }
 
   a {
-    color: #f44336;
+    color: var(--link-color);
   }
 
   .navbar-light .navbar-nav .active > .nav-link,
@@ -148,7 +189,7 @@
   }
 
   .modal-header {
-    border-bottom: 1px solid #a4a4a4f;
+    border-bottom: 1px solid #a4a4a4;
     background-color: #222;
   }
 
@@ -216,7 +257,8 @@
   }
 
   .navbar-light .navbar-toggler {
-    color: #a4a4a4;
-    border-color: #a4a4a4;
+    background-color: var(--navbar-bg-color);
+    border: none;
+    cursor: pointer;
   }
 }
