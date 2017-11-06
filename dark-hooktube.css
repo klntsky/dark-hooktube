@@ -11,6 +11,10 @@
     --primary-color: rgba(255, 255, 255, 0.88);
   }
 
+  body {
+    background-color: #111111 !important;
+  }
+
   #video-list > .row > * > a {
     font-weight: bold;
     font-family: Roboto, Arial, sans-serif;
@@ -87,6 +91,11 @@
     border-color: #80bdff;
   }
 
+  #search-button {
+    border: 1px solid #333;
+    cursor: pointer;
+  }
+
   .list-channel-title {
     color: var(--channel-title-link-color);
   }
@@ -97,7 +106,13 @@
 
   .btn {
     color:var(--highlight);
-    border: 2px solid var(--highlight);
+    /* border: 2px solid var(--highlight); */
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn:hover {
+    background-color: #333;
   }
 
   .dropdown-menu.show {
@@ -164,7 +179,7 @@
   }
 
   .text-primary {
-    color:var(--highlight)!important;
+    color:var(--highlight) !important;
   }
 
   a:hover {
@@ -198,7 +213,7 @@
   }
 
   .modal-title {
-    color: #222!important;
+    color: #222 !important;
   }
 
   .close {
@@ -260,5 +275,19 @@
     background-color: var(--navbar-bg-color);
     border: none;
     cursor: pointer;
+  }
+
+  #main-footer {
+    border-top: 1px solid #333;
+  }
+
+  .row, .col {
+    background-color: var(--bg-color) !important;
+  }
+
+  /* see front page */
+  mark {
+    color: white;
+    background-color: var(--bg-color);
   }
 }
